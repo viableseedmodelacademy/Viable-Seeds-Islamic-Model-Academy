@@ -1,4 +1,3 @@
-// Keep track of the current slide state
 let currentSlide = 0;
 
 function showPage(pageName) {
@@ -37,7 +36,6 @@ function showSlide(index) {
     
     if (slides.length === 0) return;
 
-    // Handle index overflow/underflow
     if (index >= slides.length) {
         currentSlide = 0;
     } else if (index < 0) {
@@ -46,7 +44,6 @@ function showSlide(index) {
         currentSlide = index;
     }
 
-    // Reset all slides and indicators
     slides.forEach((slide, i) => {
         slide.classList.remove('active');
         if (indicators[i]) {
@@ -55,7 +52,6 @@ function showSlide(index) {
         }
     });
 
-    // Activate current slide and indicator
     slides[currentSlide].classList.add('active');
     if (indicators[currentSlide]) {
         indicators[currentSlide].classList.add('active', 'bg-white');
@@ -125,21 +121,17 @@ function handleScroll() {
     }
 }
 
-// Initialization on Load
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.carousel-slide');
     const indicators = document.querySelectorAll('.carousel-indicator');
 
     if (slides.length > 0) {
-        // Show the first slide initially
         showSlide(0);
 
-        // Set up the automatic 5-second interval
         setInterval(() => {
             window.nextSlide();
         }, 5000);
 
-        // Add click listeners to indicators
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => showSlide(index));
         });

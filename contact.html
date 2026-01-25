@@ -13,55 +13,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 transition-all duration-300" id="navbar">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-            <a href="index.html" class="flex items-center space-x-3">
-                <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-=red-500 rounded-xl flex items-center justify-center">
-                    <img src="logo.png" alt="Our logo">
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-=red-500 rounded-xl flex items-center justify-center">
+                        <img src="logo.png" alt="Our logo">
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-red-900">Viable Seed Model Academy</h1>
+                    </div>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold active" data-page="home">Home</a>
+                    <a href="about.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="about">About Us</a>
+                    <a href="courses.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="courses">Courses</a>
+                    <a href="facilities.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="facilities">Facilities</a>
+                    <a href="contact.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="contact">Contact</a>
+                    <a href="gallery.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="contact">Gallery</a>
+                    <button onclick="window.location.href='contact.html'" class="btn-primary text-white px-6 py-3 rounded-full font-semibold">
+                        Enroll Now
+                    </button>
+                    <button onclick="window.location.href='login.html'" class="btn-primary text-white px-6 py-3 rounded-full font-semibold">
+                        Login
+                    </button>
                 </div>
-                <div>
-                    <h1 class="text-xl font-bold text-red-900">Viable Seed Model Academy</h1>
-                </div>
-            </a>
-            
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="home">Home</a>
-                <a href="about.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold " data-page="about">About Us</a>
-                <a href="courses.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="courses">Courses</a>
-                <a href="facilities.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="facilities">Facilities</a>
-                <a href="contact.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold active" data-page="contact">Contact</a>
-                <a href="gallery.html" class="nav-link text-gray-700 hover:text-red-600 font-semibold" data-page="contact">Gallery</a>
-                <button onclick="window.location.href='contact.html'" class="btn-primary text-white px-6 py-3 rounded-full font-semibold">
-                    Enroll Now
-                </button>
-            </div>
-            
-            <button class="md:hidden text-gray-700 text-2xl" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars" id="menuIcon"></i>
-            </button>
-        </div>
-    </div>
-    
-    <div class="mobile-menu fixed top-0 left-0 w-64 h-full bg-white shadow-2xl md:hidden" id="mobileMenu">
-        <div class="p-6">
-            <button class="absolute top-4 right-4 text-gray-500 text-xl" onclick="toggleMobileMenu()">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="mt-8 space-y-4">
-                <a href="index.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Home</a>
-                <a href="about.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">About Us</a>
-                <a href="courses.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Courses</a>
-                <a href="facilities.html" onclick="oggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Facilities</a>
-                <a href="contact.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Contact</a>
-                <a href="gallery.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Gallery</a>
-                <button onclick="window.location.href='contact.html'; toggleMobileMenu();" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full mt-4">
-                    Enroll Now
+                
+                <button class="md:hidden text-gray-700 text-2xl" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars" id="menuIcon"></i>
                 </button>
             </div>
         </div>
-    </div>
-</nav>
+        
+        <div class="mobile-menu fixed top-0 left-0 w-64 h-full bg-white shadow-2xl md:hidden" id="mobileMenu">
+            <div class="p-6">
+                <button class="absolute top-4 right-4 text-gray-500 text-xl" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="mt-8 space-y-4">
+                    <a href="index.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Home</a>
+                    <a href="about.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">About Us</a>
+                    <a href="courses.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Courses</a>
+                    <a href="facilities.html" onclick="oggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Facilities</a>
+                    <a href="contact.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Contact</a>
+                    <a href="gallery.html" onclick="toggleMobileMenu();" class="block py-3 text-gray-700 hover:text-red-600 font-semibold border-b border-gray-100">Gallery</a>
+                    <button onclick="window.location.href='contact.html'; toggleMobileMenu();" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full mt-4">
+                        Enroll Now
+                    </button>
+                    <button onclick="window.location.href='login.html'; toggleMobileMenu();" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full mt-4">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
 <section class="page" id="page-contact">
     <div class="pt-24">

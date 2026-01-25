@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viable Seed Islamic Model Academy - Admin Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="admin-panel/auth.js"></script>
+    <link rel="stylesheet" href="log.css">
+
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="islamic-pattern"></div>
+    
+    <div class="glass-card rounded-3xl p-8 md:p-10 w-full max-w-md relative z-10">
+        <div class="flex flex-col items-center mb-8">
+            <div class="floating mb-6">
+                <img 
+                    src="logosp.png" 
+                    alt="VSMA Logo" 
+                    class="w-24 h-24 md:w-28 md:h-28 object-contain logo-glow rounded-full">
+            </div>
+            <h1 class="text-red-200 text-xl md:text-2xl font-bold text-center tracking-wide">
+                Viable Seed Islamic Model Academy
+            </h1>
+            <div class="w-16 h-1 bg-gradient-to-r from-transparent via-green-600 to-transparent mt-3 rounded-full"></div>
+        </div>
+        
+        <form id="loginForm" class="space-y-5">   
+
+            <div class="green-accent pl-4">
+                <label class="block text-white text-sm font-medium mb-2 opacity-90">Username</label>
+                <input 
+                    type="text" 
+                    id="username"
+                    placeholder="Enter your username"
+                    required
+                    class="input-field w-full px-4 py-3 rounded-xl text-white text-sm md:text-base"
+                >
+            </div>
+
+            <div class="green-accent pl-4">
+                <label class="block text-white text-sm font-medium mb-2 opacity-90">Email</label>
+                <input 
+                    type="email" 
+                    id="email"
+                    placeholder="Enter email"
+                    required
+                    class="input-field w-full px-4 py-3 rounded-xl text-white text-sm md:text-base"
+                >
+            </div>
+            
+            <div class="green-accent pl-4">
+                <label class="block text-white text-sm font-medium mb-2 opacity-90">Password</label>
+                <input 
+                    type="password" 
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                    class="input-field w-full px-4 py-3 rounded-xl text-white text-sm md:text-base"
+                >
+            </div>
+
+            <div id="errorMessage" class="error-message hidden text-red-200 text-sm p-3 rounded-xl text-center">
+                Invalid credentials. Access denied.
+            </div>
+            
+            <button 
+                type="submit" 
+                id="loginBtn"
+                class="login-btn w-full py-4 rounded-xl text-white font-semibold text-base md:text-lg shadow-lg mt-6"
+            >
+                Login
+            </button>
+        </form>
+    </div>
+    
+    <p class="text-white text-xs opacity-50 mt-8 relative z-10">Protected by VSMA</p>
+    </body>
+</html>
