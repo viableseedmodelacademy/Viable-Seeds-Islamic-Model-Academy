@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents - Viable Seed Model Academy Admin</title>
+    <link rel="stylesheet" href="stylest.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="overlay"></div>
+    <aside class="sidebar">
+        <div class="sidebar-header"><h2>VSMA Admin</h2><p>Super Admin Dashboard</p></div>
+        <nav class="sidebar-menu">
+            <a href="Dashboard.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Dashboard</span></a>
+            <a href="students.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Students</span></a>
+            <a href="parents.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Parents</span></a>
+            <a href="results.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Results</span></a>
+            <a href="assignments.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Assignments</span></a>
+            <a href="lessons.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Lessons</span></a>
+            <a href="announcements.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg><span>Announcements</span></a>
+            <a href="events.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Events</span></a>
+            <a href="galleryA.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Gallery</span></a>
+            <a href="documents.html" class="menu-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg><span>Documents</span></a>
+            <a href="messages.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Messages</span></a>
+            <a href="settings.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></a>
+        </nav>
+        <div class="sidebar-footer"><button class="logout-btn" id="logoutBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Logout</button></div>
+    </aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left"><button class="mobile-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><h1>Viable Seed Model Academy</h1></div>
+            <div class="topbar-right"><span class="greeting" id="greeting">Welcome, Admin</span><button class="theme-toggle" id="themeToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></div>
+        </header>
+        <div class="content-area">
+            <div class="page-header"><h2>Documents Management</h2><p>Upload and manage school documents</p></div>
+            <div class="glass-card">
+                <div class="card-header"><h3>Upload Document</h3></div>
+                <form id="documentForm">
+                    <div class="form-row">
+                        <div class="form-group"><label>Document Title</label><input type="text" class="form-control" id="title" required></div>
+                        <div class="form-group"><label>Category</label><select class="form-control" id="category" required><option value="">Select Category</option><option value="Curriculum">Curriculum</option><option value="Policy">Policy</option><option value="Forms">Forms</option><option value="Reports">Reports</option><option value="Circulars">Circulars</option><option value="Other">Other</option></select></div>
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea class="form-control" id="description" rows="2"></textarea></div>
+                    <div class="upload-zone" id="docZone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                        <p id="fileName">Drop document here or click to browse</p>
+                        <input type="file" id="docInput" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx" style="display:none">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top:20px">Upload Document</button>
+                </form>
+            </div>
+            <div class="glass-card">
+                <div class="card-header"><h3>All Documents</h3></div>
+                <div class="filters"><select class="filter-select" id="categoryFilter"><option value="">All Categories</option><option value="Curriculum">Curriculum</option><option value="Policy">Policy</option><option value="Forms">Forms</option><option value="Reports">Reports</option><option value="Circulars">Circulars</option><option value="Other">Other</option></select></div>
+                <div class="table-responsive"><table class="data-table"><thead><tr><th>Title</th><th>Category</th><th>Date</th><th>Actions</th></tr></thead><tbody id="documentsTable"></tbody></table></div>
+            </div>
+            <footer class="footer">© 2021-2026 Viableseedacademy. All Rights Reserved.</footer>
+        </div>
+    </main>
+    <div class="modal-overlay" id="nameModal"><div class="modal"><div class="modal-header"><h3>Welcome to VSMA Admin</h3><p>Please enter your full name</p></div><div class="form-group"><input type="text" class="form-control" id="adminNameInput" placeholder="Enter your full name"></div><div class="modal-actions"><button class="btn btn-primary" id="saveNameBtn">Save & Continue</button></div></div></div>
+    <script src="scripts.js"></script>
+    <script>
+        let allDocuments = [], selectedFile = null;
+        async function initPage() {
+            await loadDocuments();
+            const docZone = document.getElementById('docZone');
+            const docInput = document.getElementById('docInput');
+            docZone.addEventListener('click', () => docInput.click());
+            docZone.addEventListener('dragover', e => { e.preventDefault(); docZone.classList.add('dragover'); });
+            docZone.addEventListener('dragleave', () => docZone.classList.remove('dragover'));
+            docZone.addEventListener('drop', e => { e.preventDefault(); docZone.classList.remove('dragover'); handleFile(e.dataTransfer.files[0]); });
+            docInput.addEventListener('change', e => handleFile(e.target.files[0]));
+            document.getElementById('documentForm').addEventListener('submit', handleSubmit);
+            document.getElementById('categoryFilter').addEventListener('change', filterDocuments);
+        }
+        async function loadDocuments() {
+            showLoading(document.getElementById('documentsTable'));
+            allDocuments = await fetchData('documents', { order: { column: 'created_at' } });
+            renderDocuments(allDocuments);
+        }
+        function renderDocuments(docs) {
+            const tbody = document.getElementById('documentsTable');
+            if (!docs.length) { showEmpty(tbody, 'No documents found'); return; }
+            tbody.innerHTML = docs.map(d => `
+                <tr>
+                    <td><strong>${d.title}</strong>${d.description ? `<p style="font-size:0.8rem;color:var(--text-dark-secondary);margin-top:5px">${d.description.substring(0,50)}...</p>` : ''}</td>
+                    <td><span class="badge badge-warning">${d.category}</span></td>
+                    <td>${formatDate(d.created_at)}</td>
+                    <td><div class="action-btns">
+                        <a href="${d.file_url}" target="_blank" class="icon-btn edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+                        <button class="icon-btn delete" onclick="deleteDocument(${d.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+                    </div></td>
+                </tr>
+            `).join('');
+        }
+        function filterDocuments() {
+            const category = document.getElementById('categoryFilter').value;
+            renderDocuments(category ? allDocuments.filter(d => d.category === category) : allDocuments);
+        }
+        function handleFile(file) {
+            if (file) {
+                selectedFile = file;
+                document.getElementById('fileName').textContent = file.name;
+            }
+        }
+        async function handleSubmit(e) {
+            e.preventDefault();
+            if (!selectedFile) { showToast('Please select a file', 'error'); return; }
+            const path = `documents/${Date.now()}_${selectedFile.name}`;
+            const url = await uploadFile('documents', selectedFile, path);
+            if (url) {
+                const data = { title: document.getElementById('title').value, category: document.getElementById('category').value, description: document.getElementById('description').value, file_url: url, file_name: selectedFile.name };
+                if (await insertData('documents', data)) {
+                    document.getElementById('documentForm').reset();
+                    document.getElementById('fileName').textContent = 'Drop document here or click to browse';
+                    selectedFile = null;
+                    await loadDocuments();
+                }
+            }
+        }
+        async function deleteDocument(id) { if (confirm('Delete this document?')) { if (await deleteData('documents', id)) await loadDocuments(); } }
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Viable Seed Model Academy Admin</title>
+    <link rel="stylesheet" href="stylest.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="overlay"></div>
+    <aside class="sidebar">
+        <div class="sidebar-header"><h2>VSMA Admin</h2><p>Super Admin Dashboard</p></div>
+        <nav class="sidebar-menu">
+            <a href="Dashboard.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Dashboard</span></a>
+            <a href="students.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Students</span></a>
+            <a href="parents.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Parents</span></a>
+            <a href="results.html" class="menu-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span>Results</span></a>
+            <a href="assignments.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Assignments</span></a>
+            <a href="lessons.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Lessons</span></a>
+            <a href="announcements.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg><span>Announcements</span></a>
+            <a href="events.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Events</span></a>
+            <a href="galleryA.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Gallery</span></a>
+            <a href="documents.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg><span>Documents</span></a>
+            <a href="messages.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Messages</span></a>
+            <a href="settings.html" class="menu-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></a>
+        </nav>
+        <div class="sidebar-footer"><button class="logout-btn" id="logoutBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Logout</button></div>
+    </aside>
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left"><button class="mobile-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><h1>Viable Seed Model Academy</h1></div>
+            <div class="topbar-right"><span class="greeting" id="greeting">Welcome, Admin</span><button class="theme-toggle" id="themeToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></div>
+        </header>
+        <div class="content-area">
+            <div class="page-header"><h2>Results Management</h2><p>Upload and manage student results</p></div>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('single')">Single Upload</button>
+                <button class="tab-btn" onclick="switchTab('bulk')">Bulk CSV Upload</button>
+                <button class="tab-btn" onclick="switchTab('view')">View Results</button>
+            </div>
+            <div class="tab-content active" id="singleTab">
+                <div class="glass-card">
+                    <div class="card-header"><h3>Upload Single Result</h3></div>
+                    <form id="resultForm">
+                        <div class="form-row">
+                            <div class="form-group"><label>Student</label><select class="form-control" id="studentSelect" required></select></div>
+                            <div class="form-group"><label>Term</label><select class="form-control" id="term" required><option value="">Select Term</option><option value="First Term">First Term</option><option value="Second Term">Second Term</option><option value="Third Term">Third Term</option></select></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Session</label><input type="text" class="form-control" id="session" placeholder="e.g. 2024/2025" required></div>
+                            <div class="form-group"><label>Subject</label><input type="text" class="form-control" id="subject" required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>CA Score (40%)</label><input type="number" class="form-control" id="caScore" min="0" max="40" required></div>
+                            <div class="form-group"><label>Exam Score (60%)</label><input type="number" class="form-control" id="examScore" min="0" max="60" required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label>Total Score</label><input type="number" class="form-control" id="totalScore" readonly></div>
+                            <div class="form-group"><label>Grade</label><input type="text" class="form-control" id="grade" readonly></div>
+                        </div>
+                        <div class="form-group"><label>Remarks</label><textarea class="form-control" id="remarks" rows="2"></textarea></div>
+                        <button type="submit" class="btn btn-primary">Save Result</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-content" id="bulkTab">
+                <div class="glass-card">
+                    <div class="card-header"><h3>Bulk CSV Upload</h3></div>
+                    <div class="upload-zone" id="csvZone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <p>Drop CSV file here or click to browse</p>
+                        <input type="file" id="csvInput" accept=".csv" style="display:none">
+                    </div>
+                    <div style="margin-top:20px;padding:15px;background:rgba(255,179,0,0.1);border-radius:8px;">
+                        <strong style="color:var(--accent)">CSV Format Required:</strong>
+                        <p style="margin-top:10px;font-size:0.9rem">student_id, term, session, subject, ca_score, exam_score, remarks</p>
+                    </div>
+                    <div id="csvPreview" style="margin-top:20px;display:none;">
+                        <h4 style="margin-bottom:15px">Preview (First 5 rows)</h4>
+                        <div class="table-responsive"><table class="data-table"><thead id="csvHeader"></thead><tbody id="csvBody"></tbody></table></div>
+                        <button class="btn btn-primary" style="margin-top:15px" onclick="uploadBulkResults()">Upload All Results</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="viewTab">
+                <div class="glass-card">
+                    <div class="card-header"><h3>All Results</h3></div>
+                    <div class="filters">
+                        <select class="filter-select" id="classFilter"><option value="">All Classes</option></select>
+                        <select class="filter-select" id="termFilter"><option value="">All Terms</option><option value="First Term">First Term</option><option value="Second Term">Second Term</option><option value="Third Term">Third Term</option></select>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search..." style="max-width:200px">
+                    </div>
+                    <div class="table-responsive"><table class="data-table"><thead><tr><th>Student</th><th>Class</th><th>Subject</th><th>Term</th><th>CA</th><th>Exam</th><th>Total</th><th>Grade</th><th>Actions</th></tr></thead><tbody id="resultsTable"></tbody></table></div>
+                </div>
+            </div>
+            <footer class="footer">© 2021-2026 Viableseedacademy. All Rights Reserved.</footer>
+        </div>
+    </main>
+    <div class="modal-overlay" id="nameModal"><div class="modal"><div class="modal-header"><h3>Welcome to VSMA Admin</h3><p>Please enter your full name</p></div><div class="form-group"><input type="text" class="form-control" id="adminNameInput" placeholder="Enter your full name"></div><div class="modal-actions"><button class="btn btn-primary" id="saveNameBtn">Save & Continue</button></div></div></div>
+    <script src="scripts.js"></script>
+    <script>
+        let allResults = [], allStudents = [], csvData = [];
+        async function initPage() {
+            document.getElementById('classFilter').innerHTML = '<option value="">All Classes</option>' + generateClassOptions();
+            await Promise.all([loadStudents(), loadResults()]);
+            document.getElementById('resultForm').addEventListener('submit', handleSubmit);
+            document.getElementById('caScore').addEventListener('input', calculateTotal);
+            document.getElementById('examScore').addEventListener('input', calculateTotal);
+            document.getElementById('searchInput').addEventListener('input', debounce(filterResults, 300));
+            document.getElementById('classFilter').addEventListener('change', filterResults);
+            document.getElementById('termFilter').addEventListener('change', filterResults);
+            const csvZone = document.getElementById('csvZone');
+            const csvInput = document.getElementById('csvInput');
+            csvZone.addEventListener('click', () => csvInput.click());
+            csvZone.addEventListener('dragover', e => { e.preventDefault(); csvZone.classList.add('dragover'); });
+            csvZone.addEventListener('dragleave', () => csvZone.classList.remove('dragover'));
+            csvZone.addEventListener('drop', e => { e.preventDefault(); csvZone.classList.remove('dragover'); handleCSV(e.dataTransfer.files[0]); });
+            csvInput.addEventListener('change', e => handleCSV(e.target.files[0]));
+        }
+        async function loadStudents() {
+            allStudents = await fetchData('students', { order: { column: 'first_name', ascending: true } });
+            document.getElementById('studentSelect').innerHTML = '<option value="">Select Student</option>' + allStudents.map(s => `<option value="${s.id}">${s.first_name} ${s.last_name} (${s.class_level || 'N/A'})</option>`).join('');
+        }
+        async function loadResults() {
+            showLoading(document.getElementById('resultsTable'));
+            allResults = await fetchData('results', { order: { column: 'created_at' } });
+            renderResults(allResults);
+        }
+        function renderResults(results) {
+            const tbody = document.getElementById('resultsTable');
+            if (!results.length) { showEmpty(tbody, 'No results found'); return; }
+            tbody.innerHTML = results.map(r => {
+                const student = allStudents.find(s => s.id === r.student_id);
+                return `<tr><td>${student ? student.first_name + ' ' + student.last_name : 'Unknown'}</td><td>${student?.class_level || '-'}</td><td>${r.subject}</td><td>${r.term}</td><td>${r.ca_score}</td><td>${r.exam_score}</td><td><strong>${r.total_score}</strong></td><td><span class="badge ${r.grade === 'A' || r.grade === 'B' ? 'badge-success' : r.grade === 'C' ? 'badge-warning' : 'badge-danger'}">${r.grade}</span></td><td><div class="action-btns"><button class="icon-btn delete" onclick="deleteResult(${r.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button></div></td></tr>`;
+            }).join('');
+        }
+        function filterResults() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const classFilter = document.getElementById('classFilter').value;
+            const termFilter = document.getElementById('termFilter').value;
+            let filtered = allResults.filter(r => {
+                const student = allStudents.find(s => s.id === r.student_id);
+                if (classFilter && student?.class_level !== classFilter) return false;
+                if (termFilter && r.term !== termFilter) return false;
+                if (search && !r.subject.toLowerCase().includes(search) && !(student?.first_name + ' ' + student?.last_name).toLowerCase().includes(search)) return false;
+                return true;
+            });
+            renderResults(filtered);
+        }
+        function calculateTotal() {
+            const ca = parseInt(document.getElementById('caScore').value) || 0;
+            const exam = parseInt(document.getElementById('examScore').value) || 0;
+            const total = ca + exam;
+            document.getElementById('totalScore').value = total;
+            document.getElementById('grade').value = total >= 70 ? 'A' : total >= 60 ? 'B' : total >= 50 ? 'C' : total >= 40 ? 'D' : 'F';
+        }
+        async function handleSubmit(e) {
+            e.preventDefault();
+            const data = { student_id: parseInt(document.getElementById('studentSelect').value), term: document.getElementById('term').value, session: document.getElementById('session').value, subject: document.getElementById('subject').value, ca_score: parseInt(document.getElementById('caScore').value), exam_score: parseInt(document.getElementById('examScore').value), total_score: parseInt(document.getElementById('totalScore').value), grade: document.getElementById('grade').value, remarks: document.getElementById('remarks').value };
+            if (await insertData('results', data)) { document.getElementById('resultForm').reset(); await loadResults(); switchTab('view'); }
+        }
+        function handleCSV(file) {
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = e => {
+                csvData = parseCSV(e.target.result);
+                if (csvData.length) {
+                    document.getElementById('csvPreview').style.display = 'block';
+                    const headers = Object.keys(csvData[0]);
+                    document.getElementById('csvHeader').innerHTML = '<tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr>';
+                    document.getElementById('csvBody').innerHTML = csvData.slice(0, 5).map(row => '<tr>' + headers.map(h => `<td>${row[h]}</td>`).join('') + '</tr>').join('');
+                }
+            };
+            reader.readAsText(file);
+        }
+        async function uploadBulkResults() {
+            let success = 0;
+            for (const row of csvData) {
+                const total = (parseInt(row.ca_score) || 0) + (parseInt(row.exam_score) || 0);
+                const data = { student_id: parseInt(row.student_id), term: row.term, session: row.session, subject: row.subject, ca_score: parseInt(row.ca_score), exam_score: parseInt(row.exam_score), total_score: total, grade: total >= 70 ? 'A' : total >= 60 ? 'B' : total >= 50 ? 'C' : total >= 40 ? 'D' : 'F', remarks: row.remarks || '' };
+                if (await insertData('results', data)) success++;
+            }
+            showToast(`Uploaded ${success} of ${csvData.length} results`);
+            await loadResults();
+            switchTab('view');
+        }
+        async function deleteResult(id) { if (confirm('Delete this result?')) { if (await deleteData('results', id)) await loadResults(); } }
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach((btn, i) => btn.classList.toggle('active', ['single', 'bulk', 'view'][i] === tab));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(tab + 'Tab').classList.add('active');
+        }
+    </script>
+</body>
+</html>
